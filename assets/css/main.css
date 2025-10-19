@@ -183,3 +183,51 @@ input[type=color]{width:42px; height:42px; border:none; background:transparent; 
   margin: 0 auto 20px;
   filter: drop-shadow(0 0 10px rgba(255,255,255,.3));
 }
+
+
+/* ===== Hamburger (<=960px) ===== */
+.nav-toggle{ display:none; position:relative; width:46px; height:44px; border:1px solid var(--c-border); border-radius:12px; background:var(--c-surface); cursor:pointer; align-items:center; justify-content:center; box-shadow:0 6px 18px rgba(0,0,0,.25); }
+.nav-toggle .bar{ position:absolute; width:24px; height:2px; background:var(--c-text); left:50%; transform:translateX(-50%); transition:transform .28s ease, opacity .2s ease, top .28s ease; }
+.nav-toggle .bar:nth-child(1){ top:14px }
+.nav-toggle .bar:nth-child(2){ top:21px }
+.nav-toggle .bar:nth-child(3){ top:28px }
+.nav-toggle:focus-visible{ outline:2px solid var(--c-cyan); outline-offset:3px }
+
+/* morph to X */
+.nav-toggle.is-open .bar:nth-child(1){ top:21px; transform:translateX(-50%) rotate(45deg) }
+.nav-toggle.is-open .bar:nth-child(2){ opacity:0 }
+.nav-toggle.is-open .bar:nth-child(3){ top:21px; transform:translateX(-50%) rotate(-45deg) }
+
+/* backdrop */
+.nav-backdrop{ position:fixed; inset:0; background:rgba(0,0,0,.45); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); z-index:39; }
+
+/* drawer transforms the existing .nav */
+@media (max-width:960px){
+  .site-header .wrap{ gap:12px }
+  .nav-toggle{ display:flex }
+  .nav-backdrop[hidden]{ display:none }
+
+  .nav{ position:fixed; top:0; right:0; height:100dvh; width:min(78vw, 360px); display:flex; flex-direction:column; padding:84px 20px 24px; gap:4px; background:var(--c-surface-2); border-left:1px solid var(--c-border); box-shadow: -16px 0 40px rgba(0,0,0,.35); transform: translateX(100%); transition: transform .32s ease; z-index:40 }
+  .nav a{ display:block; padding:14px 12px; margin:0; border-radius:12px; font-weight:800; text-decoration:none; color:var(--c-text); opacity:.95; border:1px solid transparent }
+  .nav a:hover{ opacity:1; background:linear-gradient(90deg, rgba(255,43,187,.08), rgba(0,208,255,.08)); border-color: var(--c-border) }
+  .nav.is-open{ transform: translateX(0) }
+
+  /* hide desktop nav gap */
+  .site-header .wrap{ justify-content:space-between }
+}
+
+/* lock scroll when drawer open */
+.body-no-scroll{ overflow:hidden; height:100dvh }
+
+/* subtle ink burst on open (optional; works if spawnInk is defined in main.js) */
+.nav-toggle.ink-burst::after{ content:""; position:absolute; inset:-2px; border-radius:14px; outline:2px solid rgba(255,255,255,.14); animation: burst .45s ease both }
+@keyframes burst{ from{ outline-offset:10px; opacity:1 } to{ outline-offset:20px; opacity:0 } }
+
+
+/* ===== Loading Overlay ===== */
+.preloader{ position:fixed; inset:0; display:grid; place-items:center; background:var(--c-bg, #0a0b0f); z-index:9999; transition:opacity .45s ease, visibility 0s linear .6s; }
+.preloader__content{ display:flex; align-items:center; justify-content:center; gap:12px; padding:18px 22px; border-radius:16px; background:rgba(17,19,26,.65); border:1px solid var(--c-border, #262a33); box-shadow:0 10px 40px rgba(0,0,0,.45); }
+.preloader__img{ width:88px; height:auto; display:block; filter: drop-shadow(0 2px 8px rgba(0,0,0,.35)); animation: floatY 1.2s ease-in-out infinite; }
+@keyframes floatY{ 0%{ transform:translateY(0) } 50%{ transform:translateY(-6px) } 100%{ transform:translateY(0) } }
+.preloader.is-hide{ opacity:0; visibility:hidden; pointer-events:none; }
+body.preload-lock{ overflow:hidden; height:100dvh; }
