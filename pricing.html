@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>料金・プラン｜塗装工房 牧</title>
+  <meta name="description" content="価格表は掲載せず、住まいと予算に合わせた最適提案をお電話でご案内します。">
+  <meta name="theme-color" content="#000000">
+  <link rel="preload" as="image" href="assets/img/hero-ink.svg">
+  <link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body>
+  <div id="loading" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" class="loading-svg">
+      <defs>
+        <linearGradient id="inkGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff2bbb"/>
+          <stop offset="50%" stop-color="#00d0ff"/>
+          <stop offset="100%" stop-color="#78ff00"/>
+        </linearGradient>
+        <mask id="wipe">
+          <rect width="1200" height="600" fill="#000"/>
+          <circle id="wipeCircle" cx="-200" cy="300" r="10" fill="#fff">
+            
+            
+          </circle>
+        </mask>
+      </defs>
+      <rect width="1200" height="600" fill="url(#inkGrad)" mask="url(#wipe)"></rect>
+    </svg>
+  </div>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="塗装工房 牧 トップへ">
+  <img src="assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="logo-img">
+</a>
+      <nav class="nav" role="navigation" aria-label="グローバルナビ">
+        <a href="index.html">トップ</a>
+        <a href="services.html">サービス</a>
+        <a href="works.html">施工事例</a>
+        <a href="pricing.html">料金・プラン</a>
+        <a href="company.html">会社情報</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="tips.html">豆知識</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+<section class="section">
+  <div class="wrap center">
+    <h1 class="headline-drip">料金・プラン</h1>
+    <p>住まいとご予算、塗装の目的に合わせて最適なご提案を行います。まずはお電話でご相談ください。</p>
+    <p><strong>価格表の公開は行っていません。</strong></p>
+    <p><a class="btn btn-phone" href="tel:090-0000-0000">今すぐ電話で無料見積</a></p>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2 class="headline-drip">よくあるご相談</h2>
+    <ul>
+      <li>外壁の色選びについて知りたい</li>
+      <li>小規模の塗装でも来てもらえる？</li>
+      <li>店舗の外観を明るくしたい</li>
+    </ul>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrap f-logo">
+    <img src="assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="footer-logo">
+  </div>
+    <div class="wrap">
+      <div class="f-col">
+        <strong>塗装工房 牧</strong><br>
+        北九州市全域・近郊対応<br>
+        営業時間：9:00〜18:00（年中無休）<br>
+        TEL：<a href="tel:090-0000-0000">090-0000-0000</a>
+      </div>
+      <nav class="f-nav">
+        <a href="legal/tokusho.html">特定商取引法に基づく表記</a>
+        <a href="legal/privacy.html">プライバシーポリシー</a>
+        <a href="legal/cookies.html">クッキーについて</a>
+        <a href="legal/license.html">建設業許可（準備中）</a>
+      </nav>
+      <p class="copy">© 塗装工房 牧</p>
+    </div>
+  </footer>
+  <div class="cta-bar" role="region" aria-label="固定呼び出しボタン">
+    <a class="cta cta-phone" href="tel:090-0000-0000" aria-label="今すぐ電話で無料見積">今すぐ電話で無料見積</a>
+    <a class="cta cta-color" href="#color-sim" aria-label="カラーを試す">カラーを試す</a>
+  </div>
+  <div id="ink-container" aria-hidden="true"></div>
+  <script src="assets/js/main.js"></script>
+
+<canvas id="inkCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
+<script>
+const canvas = document.getElementById('inkCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function splash(x, y, color) {
+  for (let i = 0; i < 30; i++) {
+    let radius = Math.random() * 20 + 10;
+    let offsetX = (Math.random() - 0.5) * 200;
+    let offsetY = (Math.random() - 0.5) * 200;
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(x + offsetX, y + offsetY, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  setTimeout(() => { ctx.clearRect(0, 0, canvas.width, canvas.height); }, 1500);
+}
+document.addEventListener("click", (e) => {
+  const colors = ['#f44336', '#4caf50', '#2196f3', '#ffeb3b'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  splash(e.clientX, e.clientY, color);
+});
+</script>
+</body>
+</html>

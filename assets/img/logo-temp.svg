@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90">
+  <defs>
+    <linearGradient id="lg" x1="0" x2="1">
+      <stop offset="0" stop-color="#ff2bbb"/><stop offset="1" stop-color="#ff7a00"/>
+    </linearGradient>
+  </defs>
+  <rect rx="14" ry="14" x="2" y="2" width="316" height="86" fill="#0f0f12"/>
+  <text x="24" y="58" font-size="42" font-family="Arial Black, Arial" fill="url(#lg)">塗装工房 牧</text>
+</svg>

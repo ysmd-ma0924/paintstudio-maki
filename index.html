@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>塗装工房 牧｜北九州市の外壁・屋根塗装</title>
+  <meta name="description" content="北九州市全域対応の塗装工房 牧。外壁・屋根・店舗ファサードの色提案と丁寧施工で、今すぐ電話で無料見積。">
+  <meta name="theme-color" content="#000000">
+  <link rel="preload" as="image" href="assets/img/hero-ink.svg">
+  <link rel="stylesheet" href="assets/css/main.css" />
+
+<style>
+nav.global-nav {
+  display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; padding: 10px;
+}
+nav.global-nav a {
+  color: white; text-decoration: none; font-weight: bold;
+}
+nav.hamburger {
+  display: none;
+  text-align: right;
+  padding: 10px 20px;
+}
+@media (max-width: 768px) {
+  nav.global-nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    padding: 20px;
+  }
+  nav.global-nav.active {
+    display: flex;
+  }
+  nav.hamburger {
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+  <div id="loading" aria-hidden="true">
+    <svg viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" class="loading-svg">
+      <defs>
+        <linearGradient id="inkGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff2bbb"/>
+          <stop offset="50%" stop-color="#00d0ff"/>
+          <stop offset="100%" stop-color="#78ff00"/>
+        </linearGradient>
+        <mask id="wipe">
+          <rect width="1200" height="600" fill="#000"/>
+          <circle id="wipeCircle" cx="-200" cy="300" r="10" fill="#fff">
+            
+            
+          </circle>
+        </mask>
+      </defs>
+      <rect width="1200" height="600" fill="url(#inkGrad)" mask="url(#wipe)"></rect>
+    </svg>
+  </div>
+  <header class="site-header" role="banner">
+    <div class="wrap">
+      <a href="index.html" class="logo" aria-label="塗装工房 牧 トップへ">
+  <img src="assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="logo-img">
+</a>
+      <nav class="nav" role="navigation" aria-label="グローバルナビ">
+        <a href="index.html">トップ</a>
+        <a href="services.html">サービス</a>
+        <a href="works.html">施工事例</a>
+        <a href="pricing.html">料金・プラン</a>
+        <a href="company.html">会社情報</a>
+        <a href="faq.html">よくある質問</a>
+        <a href="tips.html">豆知識</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+
+<section class="hero section">
+  <div class="hero-bg">
+    <img src="assets/img/hero-ink.svg" alt="" aria-hidden="true" loading="eager">
+  </div>
+  
+  <div class="wrap hero-inner">
+    <div class="kv-wrap">
+      <img class="kv-logo" src="assets/img/kv.png" style="max-width:70%;"" alt="PAINT STUDIO MAKI タイトルロゴ">
+    </div>
+    <div class="cta-group" style="justify-content:center">
+      <a class="btn btn-phone" href="tel:090-0000-0000" aria-label="今すぐ電話で無料見積">今すぐ電話で無料見積</a>
+      <a class="btn btn-secondary" href="#color-sim">カラーを試す</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="headline-drip">選ばれる3つの理由</h2>
+    <div class="cards strengths">
+      <article class="card">
+        <h3>価格がわかりやすい</h3>
+        <p>まずは電話で状況を伺い、無理のない範囲でご提案。小規模の塗装でも気軽に。</p>
+      </article>
+      <article class="card">
+        <h3>色の提案が得意</h3>
+        <p>親方は絵がうまい。配色のコツを押さえながら、イメージしやすい案内をします。</p>
+      </article>
+      <article class="card">
+        <h3>フットワーク軽く迅速</h3>
+        <p>北九州市全域＆近郊にスピード対応。小回りの良さが強みです。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="color-sim" class="section alt">
+  <div class="wrap">
+    <h2 class="headline-drip">カラーを試す</h2>
+    <div class="color-sim">
+      <div class="house">
+        <svg id="house-svg" viewBox="0 0 320 200" aria-labelledby="houseTitle" role="img">
+          <title id="houseTitle">外壁カラーシミュレーター</title>
+          <polygon points="20,100 160,20 300,100" fill="#333"/>
+          <rect x="40" y="100" width="240" height="80" fill="#cccccc" data-fill-target="true" />
+          <rect x="70" y="130" width="40" height="50" fill="#fafafa"/>
+          <rect x="210" y="130" width="40" height="50" fill="#fafafa"/>
+          <rect x="150" y="140" width="30" height="40" fill="#6b4f2a"/>
+        </svg>
+      </div>
+      <div>
+        <div class="swatches" aria-label="色の候補">
+          <button class="swatch" style="--sw:#ff2bbb" data-color="#ff2bbb" aria-label="マゼンタ"></button>
+          <button class="swatch" style="--sw:#00d0ff" data-color="#00d0ff" aria-label="シアン"></button>
+          <button class="swatch" style="--sw:#78ff00" data-color="#78ff00" aria-label="ライム"></button>
+          <button class="swatch" style="--sw:#ff7a00" data-color="#ff7a00" aria-label="オレンジ"></button>
+          <button class="swatch" style="--sw:#ffffff" data-color="#ffffff" aria-label="ホワイト"></button>
+          <button class="swatch" style="--sw:#9aa0a6" data-color="#9aa0a6" aria-label="グレー"></button>
+        </div>
+        <div class="picker-panel" aria-label="RGB カラーピッカー">
+          <div class="picker-row">
+            <input type="range" id="p-r" min="0" max="255" value="204" aria-label="R">
+            <input type="number" id="p-rn" min="0" max="255" value="204">
+            <span>R</span>
+          </div>
+          <div class="picker-row">
+            <input type="range" id="p-g" min="0" max="255" value="204" aria-label="G">
+            <input type="number" id="p-gn" min="0" max="255" value="204">
+            <span>G</span>
+          </div>
+          <div class="picker-row">
+            <input type="range" id="p-b" min="0" max="255" value="204" aria-label="B">
+            <input type="number" id="p-bn" min="0" max="255" value="204">
+            <span>B</span>
+          </div>
+          <div class="hex-row">
+            <input type="text" id="p-hex" value="#CCCCCC" aria-label="Hex">
+            <input type="color" id="p-color" value="#CCCCCC" aria-label="カラーピッカー">
+          </div>
+          <div id="palette-grid" class="palette-grid" aria-label="カラーパレット"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <h2 class="headline-drip">サービス</h2>
+    <div class="cards services">
+      <article class="card"><h3>外壁塗装</h3><p>住まいの印象を大きく左右。色選びから丁寧に。</p></article>
+      <article class="card"><h3>屋根塗装</h3><p>耐候性を高め、長く安心して暮らせるように。</p></article>
+      <article class="card"><h3>防水・店舗ファサード</h3><p>店舗の顔づくりもお任せ。清潔感ある仕上がりへ。</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap center">
+    <h2 class="headline-drip">まずはお電話で相談</h2>
+    <p>住まいとご予算に合わせて最適な塗装をご提案します。</p>
+    <a class="btn btn-phone" href="tel:090-0000-0000">今すぐ電話で無料見積</a>
+  </div>
+</section>
+
+  </main>
+  <footer class="site-footer">
+  <div class="wrap f-logo">
+    <img src="assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="footer-logo">
+  </div>
+    <div class="wrap">
+      <div class="f-col">
+        <strong>塗装工房 牧</strong><br>
+        北九州市全域・近郊対応<br>
+        営業時間：9:00〜18:00（年中無休）<br>
+        TEL：<a href="tel:090-0000-0000">090-0000-0000</a>
+      </div>
+      <nav class="f-nav">
+        <a href="legal/tokusho.html">特定商取引法に基づく表記</a>
+        <a href="legal/privacy.html">プライバシーポリシー</a>
+        <a href="legal/cookies.html">クッキーについて</a>
+        <a href="legal/license.html">建設業許可（準備中）</a>
+      </nav>
+      <p class="copy">© 塗装工房 牧</p>
+    </div>
+  </footer>
+  <div class="cta-bar" role="region" aria-label="固定呼び出しボタン">
+    <a class="cta cta-phone" href="tel:090-0000-0000" aria-label="今すぐ電話で無料見積">今すぐ電話で無料見積</a>
+    <a class="cta cta-color" href="#color-sim" aria-label="カラーを試す">カラーを試す</a>
+  </div>
+  <div id="ink-container" aria-hidden="true"></div>
+  <script src="assets/js/main.js"></script>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click', function () {
+  document.querySelector('.global-nav').classList.toggle('active');
+});
+</script>
+
+<canvas id="inkCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
+<script>
+const canvas = document.getElementById('inkCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function splash(x, y, color) {
+  for (let i = 0; i < 30; i++) {
+    let radius = Math.random() * 20 + 10;
+    let offsetX = (Math.random() - 0.5) * 200;
+    let offsetY = (Math.random() - 0.5) * 200;
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(x + offsetX, y + offsetY, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  setTimeout(() => { ctx.clearRect(0, 0, canvas.width, canvas.height); }, 1500);
+}
+document.addEventListener("click", (e) => {
+  const colors = ['#f44336', '#4caf50', '#2196f3', '#ffeb3b'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  splash(e.clientX, e.clientY, color);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="ja"><head>
+  <link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>特定商取引法に基づく表記｜塗装工房 牧</title><link rel="stylesheet" href="../assets/css/main.css"></head><body>
+<header class="site-header"><div class="wrap"><a href="../index.html" class="logo" aria-label="塗装工房 牧 トップへ">
+  <img src="../assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="logo-img">
+</a></div></header>
+<main class="section"><div class="wrap"><h1 class="headline-drip">特定商取引法に基づく表記</h1>
+<ul>
+  <li>事業者名：塗装工房 牧</li>
+  <li>所在地：北九州市（詳細は請求時に開示）</li>
+  <li>連絡先：090-0000-0000</li>
+  <li>役務の対価：見積時に個別案内</li>
+  <li>代金の支払時期・方法：契約時に取り決め</li>
+  <li>役務の提供時期：工程表に基づく</li>
+  <li>キャンセル・返品：契約内容に基づき対応</li>
+</ul>
+</div></main>
+<footer class="site-footer">
+  <div class="wrap f-logo">
+    <img src="../assets/img/logo-maki.png" alt="塗装工房 牧 ロゴ" class="footer-logo">
+  </div><div class="wrap"><p class="copy">© 塗装工房 牧</p></div></footer>
+<div id="ink-container"></div><script src="../assets/js/main.js"></script>
+<canvas id="inkCanvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
+<script>
+const canvas = document.getElementById('inkCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+function splash(x, y, color) {
+  for (let i = 0; i < 30; i++) {
+    let radius = Math.random() * 20 + 10;
+    let offsetX = (Math.random() - 0.5) * 200;
+    let offsetY = (Math.random() - 0.5) * 200;
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.arc(x + offsetX, y + offsetY, radius, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  setTimeout(() => { ctx.clearRect(0, 0, canvas.width, canvas.height); }, 1500);
+}
+document.addEventListener("click", (e) => {
+  const colors = ['#f44336', '#4caf50', '#2196f3', '#ffeb3b'];
+  const color = colors[Math.floor(Math.random() * colors.length)];
+  splash(e.clientX, e.clientY, color);
+});
+</script>
+</body></html>
