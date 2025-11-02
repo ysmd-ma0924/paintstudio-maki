@@ -76,7 +76,7 @@ body{ overflow-x:hidden }
 
 /* カラーシミュレーター */
 .color-sim{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center}
-.house svg{width:100%; height:auto; filter: drop-shadow(0 12px 32px rgba(0,0,0,.45))}
+.house svg{width:100%; height:auto; display:block; filter: drop-shadow(0 12px 32px rgba(0,0,0,.45))}
 .swatches{display:flex; gap:10px; flex-wrap:wrap; margin-bottom:14px}
 .swatch{
   width:34px; height:34px; border-radius:999px; border:2px solid #111;
@@ -98,13 +98,10 @@ body{ overflow-x:hidden }
 .hex-row input[type=text]{flex:1; background:#0c0e13; color:var(--c-text); border:1px solid var(--c-border); border-radius:10px; padding:8px 10px}
 input[type=color]{width:42px; height:42px; border:none; background:transparent; padding:0;}
 
-.palette-grid{display:grid; grid-template-columns: repeat(12, 1fr); gap:8px; margin-top:12px}
-.palette-swatch{
-  width:100%; aspect-ratio:1/1; border-radius:10px; border:1px solid rgba(255,255,255,.1);
-  cursor:pointer; box-shadow:0 0 10px rgba(0,0,0,.25);
-  transition: transform .12s ease, box-shadow .2s ease;
-}
-.palette-swatch:hover{transform:translateY(-2px); box-shadow:0 6px 18px rgba(0,0,0,.35)}
+/* 要望: パレットグリッドとスウォッチは非表示（スライダーのみ） */
+.palette-grid{display:none !important}
+.palette-swatch{display:none}
+.swatches{display:none}
 
 /* フッター */
 .site-footer{background:#07080b; color:#fff; border-top:1px solid var(--c-border)}
@@ -119,8 +116,9 @@ input[type=color]{width:42px; height:42px; border:none; background:transparent; 
   display:flex; gap:10px; padding:10px 14px;
   background:linear-gradient(180deg, rgba(10,11,15,0), rgba(10,11,15,.8));
   backdrop-filter: blur(8px);
+  max-width:100vw; overflow-x:clip;
 }
-.cta{flex:1; display:flex; align-items:center; justify-content:center; padding:14px 16px; border-radius:14px; font-weight:900; text-decoration:none; color:#fff}
+.cta{flex:1; display:flex; align-items:center; justify-content:center; padding:14px 16px; border-radius:14px; font-weight:900; text-decoration:none; color:#fff; min-width:0}
 .cta-phone{background:linear-gradient(90deg,var(--c-magenta),var(--c-orange)); box-shadow:0 0 16px rgba(255,122,0,.25)}
 .cta-color{background:linear-gradient(90deg,var(--c-cyan),var(--c-lime)); box-shadow:0 0 16px rgba(0,208,255,.25)}
 
@@ -133,6 +131,12 @@ input[type=color]{width:42px; height:42px; border:none; background:transparent; 
 }
 /* キャンバスの100vw起因の横スクロールを抑止 */
 #inkCanvas{ position:fixed; inset:0; width:100% !important; height:100dvh !important; pointer-events:none; z-index:999 }
+
+/* モバイルでカラーセクションを縦積み＆家が確実に見えるように */
+@media (max-width: 860px){
+  .color-sim{ grid-template-columns: 1fr }
+  .house{ order:-1 }
+}
 
 /* ローディング */
 #loading{

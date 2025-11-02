@@ -128,30 +128,9 @@ document.addEventListener('click', (e)=> spawnInk(e.clientX, e.clientY));
   if (inputHex) inputHex.addEventListener('input', onHexChange);
   [r,g,b,rn,gn,bn].forEach(el=> el && el.addEventListener('input', onRgbChange));
 
-  // Adobeカラー風のパレットグリッド（12×12）
+  // 要望によりパレットグリッドは生成せず非表示
   const grid = document.getElementById('palette-grid');
-  if (grid){
-    const cols = 12, rows = 12;
-    for (let row=0; row<rows; row++){
-      for (let col=0; col<cols; col++){
-        const h = Math.round(col * (360/cols));
-        const s = 70 + Math.round(row * (25/ (rows-1))); // 70%〜95%
-        const l = 45; // ほどよい明度
-        const hex = hslToHex(h, s/100, l/100);
-        const sw = document.createElement('button');
-        sw.className = 'palette-swatch';
-        sw.style.background = hex;
-        sw.setAttribute('title', hex);
-        sw.addEventListener('click', ()=>{
-          applyColor(hex);
-          syncPickersFromHex(hex);
-          const rect = sw.getBoundingClientRect();
-          spawnInk(rect.left + rect.width/2, rect.top + rect.height/2, { color: hex, count: 10, sizeMax:24 });
-        });
-        grid.appendChild(sw);
-      }
-    }
-  }
+  if (grid){ grid.remove(); }
 
   function hslToHex(h, s, l){
     const c = (1 - Math.abs(2*l - 1)) * s;
