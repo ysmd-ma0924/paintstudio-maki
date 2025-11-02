@@ -211,6 +211,16 @@ document.addEventListener('click', (e)=> spawnInk(e.clientX, e.clientY));
   let lastFocused = null;
   const focusableSel = 'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])';
 
+  // 画面内に✘ボタンが無ければ挿入
+  let closeBtn = nav.querySelector('.nav-close');
+  if(!closeBtn){
+    closeBtn = document.createElement('button');
+    closeBtn.className = 'nav-close';
+    closeBtn.setAttribute('aria-label','メニューを閉じる');
+    closeBtn.textContent = '✘';
+    nav.prepend(closeBtn);
+  }
+
   function open(){
     lastFocused = document.activeElement;
     btn.classList.add('is-open');
@@ -276,6 +286,7 @@ document.addEventListener('click', (e)=> spawnInk(e.clientX, e.clientY));
   // click handlers
   btn.addEventListener('click', toggle);
   backdrop.addEventListener('click', close);
+  closeBtn.addEventListener('click', close);
   nav.addEventListener('click', (e)=>{
     const t = e.target.closest('a');
     if(t) close(); // auto-close on navigation

@@ -17,6 +17,8 @@ body{
                     radial-gradient(600px 300px at 50% 110%, rgba(120,255,0,.08), transparent 60%);
   background-attachment: fixed;
 }
+/* 横スクロール抑止（コンテンツのはみ出し対策） */
+body{ overflow-x:hidden }
 
 .wrap{width:var(--wrap); margin-inline:auto; padding: 22px}
 .center{text-align:center}
@@ -129,6 +131,8 @@ input[type=color]{width:42px; height:42px; border:none; background:transparent; 
   box-shadow: 0 0 16px rgba(255,255,255,.25), 0 0 38px currentColor;
   transition: transform .5s cubic-bezier(.2,.8,.2,1), opacity 1.6s linear;
 }
+/* キャンバスの100vw起因の横スクロールを抑止 */
+#inkCanvas{ position:fixed; inset:0; width:100% !important; height:100dvh !important; pointer-events:none; z-index:999 }
 
 /* ローディング */
 #loading{
@@ -218,6 +222,16 @@ input[type=color]{width:42px; height:42px; border:none; background:transparent; 
 
 /* lock scroll when drawer open */
 .body-no-scroll{ overflow:hidden; height:100dvh }
+
+/* ドロワー内クローズボタン（✘） */
+.nav .nav-close{
+  position:absolute; top:18px; right:18px; width:40px; height:40px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--c-border); border-radius:12px;
+  background:var(--c-surface); color:var(--c-text); font-size:18px; line-height:1; cursor:pointer;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+}
+.nav .nav-close:focus-visible{ outline:2px solid var(--c-cyan); outline-offset:3px }
 
 /* subtle ink burst on open (optional; works if spawnInk is defined in main.js) */
 .nav-toggle.ink-burst::after{ content:""; position:absolute; inset:-2px; border-radius:14px; outline:2px solid rgba(255,255,255,.14); animation: burst .45s ease both }
